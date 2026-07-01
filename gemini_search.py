@@ -75,7 +75,7 @@ def _clean(text: str) -> str:
 async def research_web(query: str) -> str:
     """Fast grounded web search via Gemini. Use for lookups, fact-checking, current events, and documentation."""
     client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    model = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
+    model = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
 
     config = GenerateContentConfig(
         tools=[Tool(google_search=GoogleSearch())],
